@@ -21,7 +21,7 @@ Một kịch bản Bash script thông minh, bảo mật và chạy xuyên nền 
     *   *Báo cáo & Thông báo song ngữ: Xuất tệp nhật ký trực quan ra màn hình Desktop song song hai ngôn ngữ và gửi thông báo đẩy thời gian thực.*
 
 ---
-You can download the compiled font collection—including artistic fonts (Unicode, VNI, TCVN3, etc.) for Linux and Windows—at the release page.
+You can download the compiled font collection—including artistic fonts (Unicode, VNI, TCVN3, etc.) for Linux and Windows—at the release page. https://github.com/dinoking-iot/Universal-Linux-Font-Installer-/releases/tag/Fonts
 
 ## 🚀 Quick Deployment / Hướng dẫn triển khai nhanh
 
