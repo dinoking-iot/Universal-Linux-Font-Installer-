@@ -222,4 +222,81 @@ echo "--------------------------------------------------------"
 If you wish to purge all custom fonts deployed by this installer and restore your system environment to its pristine factory state, please leverage the automated uninstaller component provided below.
 
 *Nếu bạn muốn xóa sạch toàn bộ các phông chữ đã cài đặt bằng công cụ này để đưa môi trường hệ thống về lại trạng thái nguyên bản sạch sẽ, hãy sử dụng kịch bản gỡ cài đặt tự động dưới đây.*
+```bash
+cat << 'EOF' > ~/Desktop/uninstall_fonts.sh
+#!/bin/bash
 
+TARGET_USER="$USER"
+FONT_DIR="/home/$TARGET_USER/.fonts"
+DESIGN_FONT_DIR="/home/$TARGET_USER/.fonts_design"
+CONFIG_FILE="/home/$TARGET_USER/.config/fontconfig/fonts.conf"
+LOG_FILE="/home/$TARGET_USER/Desktop/font_uninstall_report.log"
+
+# Khởi tạo file log gỡ cài đặt / Initialize Uninstaller Log
+echo "==========================================================" > "$LOG_FILE"
+echo "    UNIVERSAL FONT UNINSTALLATION PURGE REPORT             " >> "$LOG_FILE"
+echo "    BÁO CÁO TIẾN TRÌNH GỠ CÀI ĐẶT VÀ DỌN SẠCH FONT         " >> "$LOG_FILE"
+echo "==========================================================" >> "$LOG_FILE"
+echo "Execution Time / Thời gian chạy: $(date '+%d/%m/%Y %H:%M:%S')" >> "$LOG_FILE"
+echo "" >> "$LOG_FILE"
+
+# Hiển thị hộp thoại cảnh báo xác nhận xóa sạch
+zenity --question --title="Purge Confirmation / Xác nhận xóa sạch" \
+       --text="WARNING: This action will completely erase all custom fonts installed in your local directory (~/.fonts and ~/.fonts_design).\nDo you want to proceed?\n\nCẢNH BÁO: Hành động này sẽ xóa sạch toàn bộ phông chữ tùy chỉnh đã cài trong thư mục cá nhân của bạn.\nBạn có chắc chắn muốn tiếp tục không?" --width=450
+
+if [ $? -ne 0 ]; then
+    echo "[CANCELLED / HỦY BỎ] Operation cancelled by user." >> "$LOG_FILE"
+    notify-send -i "dialog-information" "Font Uninstaller" "Operation cancelled / Tiến trình dọn dẹp đã bị hủy."
+    exit 0
+fi
+
+notify-send -i "edit-delete" "Font Uninstaller" "Purging custom directories, please wait...\nĐang tiến hành xóa sạch phông chữ, vui lòng đợi..."
+
+# 1. Tiến hành xóa các thư mục cài đặt
+if [ -d "$FONT_DIR" ]; then
+    rm -rf "$FONT_DIR"
+    echo "[DELETED / ĐÃ XÓA] Standard font directory / Thư mục font tiêu chuẩn: $FONT_DIR" >> "$LOG_FILE"
+fi
+
+if [ -d "$DESIGN_FONT_DIR" ]; then
+    rm -rf "$DESIGN_FONT_DIR"
+    echo "[DELETED / ĐÃ XÓA] Isolated font sandbox / Hộp cát cách ly font thiết kế: $DESIGN_FONT_DIR" >> "$LOG_FILE"
+fi
+
+# 2. Xóa cấu hình Fontconfig tùy chỉnh
+if [ -f "$CONFIG_FILE" ]; then
+    rm -f "$CONFIG_FILE"
+    echo "[DELETED / ĐÃ XÓA] Custom Fontconfig rules / Quy tắc cấu hình Fontconfig: $CONFIG_FILE" >> "$LOG_FILE"
+fi
+
+# 3. Dọn dẹp triệt để bộ đệm ẩn cứng đầu của ONLYOFFICE
+pkill -9 -f onlyoffice
+rm -rf /home/$TARGET_USER/.local/share/onlyoffice/desktopeditors/data/fonts/*
+rm -rf /home/$TARGET_USER/.var/app/org.onlyoffice.desktopeditors/data/onlyoffice/desktopeditors/data/fonts/* 2>/dev/null
+echo "[CLEANED / ĐÃ DỌN DẸP] ONLYOFFICE isolated font-caches / Bộ nhớ đệm font ẩn của ONLYOFFICE." >> "$LOG_FILE"
+
+# 4. Biên dịch lại bộ đệm cache font của hệ điều hành về mặc định nguyên bản
+fc-cache -r -f > /dev/null 2>&1
+
+echo "" >> "$LOG_FILE"
+echo "==========================================================" >> "$LOG_FILE"
+echo " STATUS: SYSTEM ENVIRONMENT RESTORED TO FACTORY PRISTINE  " >> "$LOG_FILE"
+echo " TRẠNG THÁI: MÔI TRƯỜNG HỆ THỐNG ĐÃ ĐƯỢC KHÔI PHỤC NGUYÊN TRẠNG" >> "$LOG_FILE"
+echo "==========================================================" >> "$LOG_FILE"
+
+# 5. Gửi thông báo đẩy hoàn thành
+NOTIFY_TITLE="🗑️ Purge Completed! / Gỡ cài đặt hoàn tất!"
+NOTIFY_MSG="✅ Custom fonts have been completely wiped out.\n✅ System layout cache recompiled to pristine state.\n\nToàn bộ font tùy chỉnh đã được dọn sạch khỏi máy tính của bạn."
+notify-send -u normal -i "user-trash" "$NOTIFY_TITLE" "$NOTIFY_MSG"
+EOF
+
+# Định dạng dòng chuẩn Unix và tự động cấp quyền chạy như một chương trình
+sed -i 's/\r$//' ~/Desktop/uninstall_fonts.sh
+chmod +x ~/Desktop/uninstall_fonts.sh
+
+echo "--------------------------------------------------------"
+echo " ✅ HOÀN THÀNH: Công cụ gỡ cài đặt nhanh đã sẵn sàng!"
+echo " 👉 File 'uninstall_fonts.sh' đã xuất hiện ngoài Desktop."
+echo "--------------------------------------------------------"
+
+```
