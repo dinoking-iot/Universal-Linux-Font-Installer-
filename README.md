@@ -212,9 +212,9 @@ echo "--------------------------------------------------------"
 2. Drag and drop your typography folder/archive into the pop-up window and click **OK**.
 3. View the bilingual matrix analytics report generated on your Desktop.
 
-1. *Ra ngoài màn hình **Desktop**, nhấp đúp vào file `install_fonts_universal.sh`.*
-2. *Kéo thả thư mục hoặc tệp nén chứa font vào cửa sổ pop-up hiển thị rồi bấm **OK**.*
-3. *Kiểm tra bảng thống kê số liệu và nhật ký được xuất ngay ngoài màn hình.*
+  * *Ra ngoài màn hình **Desktop**, nhấp đúp vào file `install_fonts_universal.sh`.*
+  *  *Kéo thả thư mục hoặc tệp nén chứa font vào cửa sổ pop-up hiển thị rồi bấm **OK**.*
+  * *Kiểm tra bảng thống kê số liệu và nhật ký được xuất ngay ngoài màn hình.*
 
 ---
 
@@ -305,5 +305,5 @@ echo "--------------------------------------------------------"
 1. Go to your **Desktop** and double-click `uninstall_fonts.sh`.
 2. View the bilingual matrix analytics report generated on your Desktop.
 
-1. *Ra ngoài màn hình **Desktop**, nhấp đúp vào file `uninstall_fonts.sh`.*
-2. *Kiểm tra bảng thống kê số liệu và nhật ký được xuất ngay ngoài màn hình.*
+  *  *Ra ngoài màn hình **Desktop**, nhấp đúp vào file `uninstall_fonts.sh`.*
+  *  *Kiểm tra bảng thống kê số liệu và nhật ký được xuất ngay ngoài màn hình.*
