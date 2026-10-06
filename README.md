@@ -222,7 +222,7 @@ echo "--------------------------------------------------------"
 
 If you wish to purge all custom fonts deployed by this installer and restore your system environment to its pristine factory state, please leverage the automated uninstaller component provided below.
 
-*Nếu bạn muốn xóa sạch toàn bộ các phông chữ đã cài đặt bằng công cụ này để đưa môi trường hệ thống về lại trạng thái nguyên bản sạch sẽ, hãy sử dụng kịch bản gỡ cài đặt tự động dưới đây.*
+  * Nếu bạn muốn xóa sạch toàn bộ các phông chữ đã cài đặt bằng công cụ này để đưa môi trường hệ thống về lại trạng thái nguyên bản sạch sẽ, hãy sử dụng kịch bản gỡ cài đặt tự động dưới đây.*
 ```bash
 cat << 'EOF' > ~/Desktop/uninstall_fonts.sh
 #!/bin/bash
