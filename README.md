@@ -3,7 +3,7 @@
 
 A smart, secure, and cross-distribution Bash script designed to provide a **100% Graphical User Interface (GUI)** for managing custom typography on Linux, while actively shielding core desktop workflows and office applications (like **ONLYOFFICE**, **Google Chrome**, **Firefox**) against graphical layout distortion.
 
-Một kịch bản Bash script thông minh, bảo mật và chạy xuyên nền tảng Linux, cung cấp **giao diện đồ họa (GUI) 100%** giúp đơn giản hóa việc cài đặt phông chữ, đồng thời chủ động bảo vệ hệ thống và các ứng dụng văn phòng tránh khỏi hiện tượng vỡ font giao diện hiển thị.
+  * Một kịch bản Bash script thông minh, bảo mật và chạy xuyên nền tảng Linux, cung cấp **giao diện đồ họa (GUI) 100%** giúp đơn giản hóa việc cài đặt phông chữ, đồng thời chủ động bảo vệ hệ thống và các ứng dụng văn phòng tránh khỏi hiện tượng vỡ font giao diện hiển thị.
 
 ---
 
@@ -27,7 +27,7 @@ You can download the compiled font collection—including artistic fonts (Unicod
 
 ### 📥 1. Create Installer / Khởi tạo bộ cài đặt
 Open your native Linux **Terminal**, copy and paste the command payload below, then press **Enter**:
-*Mở **Terminal**, dán khối lệnh dưới đây và nhấn **Enter**:*
+  * *Mở **Terminal**, dán khối lệnh dưới đây và nhấn **Enter**:*
 
 ```bash
 cat << 'EOF' > ~/Desktop/install_fonts_universal.sh
