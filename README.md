@@ -300,3 +300,9 @@ echo " 👉 File 'uninstall_fonts.sh' đã xuất hiện ngoài Desktop."
 echo "--------------------------------------------------------"
 
 ```
+### 📂 3. Usage / Cách sử dụng
+1. Go to your **Desktop** and double-click `uninstall_fonts.sh`.
+2. View the bilingual matrix analytics report generated on your Desktop.
+
+1. *Ra ngoài màn hình **Desktop**, nhấp đúp vào file `uninstall_fonts.sh`.*
+2. *Kiểm tra bảng thống kê số liệu và nhật ký được xuất ngay ngoài màn hình.*
