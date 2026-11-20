@@ -97,4 +97,5 @@ Additional Flags / Tùy chọn bổ sung:
 
 • Optional (Recommended) / Khuyên dùng: python3 (deep SFNT metadata audit / kiểm tra sâu cấu trúc font), zenity (GUI dialogs / giao diện đồ họa), unzip / p7zip / unrar (archive extraction / giải nén).
 
-Download herr https://github.com/dinoking-iot/Universal-Linux-Font-Installer-/releases/tag/installfontsuniversal
+Download here 
+https://github.com/dinoking-iot/Universal-Linux-Font-Installer-/releases/tag/installfontsuniversal
