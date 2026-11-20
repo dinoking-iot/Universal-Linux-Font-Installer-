@@ -14,18 +14,23 @@ VI: Việc cài hàng loạt font thiết kế hoặc font Việt hóa cũ (VNI/
 • 🔍 Static & Behavioral Preflight Audit / Kiểm tra tĩnh & mô phỏng hành vi:
 EN: Inspects SFNT binary tables (name, cmap, OS/2, hhea) via Python and runs a live fc-match canary simulation before touching your system fonts.
 VI: Phân tích cấu trúc bảng nhị phân của font bằng Python và chạy mô phỏng fc-match như trình duyệt trước khi cài đặt thực tế.
+
 • 🚧 Smart Isolation (with-design-fonts) / Cách ly thông minh:
 EN: Harmful fonts are moved to ~/.local/share/fonts-isolated instead of deleted. Launch specific apps with full access to isolated fonts anytime (e.g., with-design-fonts libreoffice).
 VI: Các font gây hại được chuyển vào ~/.local/share/fonts-isolated thay vì xóa bỏ. Bạn vẫn có thể dùng chúng cho từng ứng dụng cụ thể khi cần (ví dụ: with-design-fonts libreoffice).
+
 • 🩺 Font Doctor (--diagnose --fix) / Chế độ Bác sĩ chẩn đoán:
 EN: Scans existing user fonts, installs missing baseline fonts (Noto, DejaVu, Liberation), cleans up broken fontconfig rules, and resets Brave browser custom font overrides safely.
 VI: Quét toàn bộ font đã cài, tự động đề xuất cài bộ font nền còn thiếu (Noto, DejaVu, Liberation), dọn dẹp cấu hình fontconfig lỗi và đặt lại font mặc định cho Brave (có sao lưu).
+
 • 📦 Recursive Extraction & Deduplication / Giải nén lồng nhau & lọc trùng:
 EN: Automatically unpacks nested .zip, .rar, .7z, and .tar.* archives, discards corrupted files, and skips duplicates via SHA-1 hash and PostScript names.
 VI: Tự động giải nén các file nén lồng nhiều lớp (.zip, .rar, .7z, .tar.*), loại bỏ file hỏng và bỏ qua font trùng lặp dựa trên mã băm SHA-1.
+
 • 🖥️ Bilingual GUI & CLI / Giao diện đồ họa & Dòng lệnh song ngữ:
 EN: Native English/Vietnamese Zenity dialogs with progress bars and persistent result summaries, plus full CLI support.
 VI: Hỗ trợ hộp thoại đồ họa Zenity song ngữ Anh - Việt trực quan kèm thanh tiến trình, đồng thời hỗ trợ đầy đủ tham số dòng lệnh.
+
 • 🔒 Safe & Reversible / An toàn & Dễ hoàn tác:
 EN: Runs strictly as the current user (never root) and includes a clean --uninstall option.
 VI: Chỉ hoạt động trong không gian người dùng hiện tại (tuyệt đối không chạy root) và hỗ trợ gỡ bỏ sạch sẽ qua lệnh --uninstall.
@@ -53,13 +58,21 @@ bash
 ./install_fonts_universal.sh --clean            # Clean temp & backups / Dọn dẹp file tạm và bản sao lưu cũ
 ./install_fonts_universal.sh --uninstall        # Uninstall everything / Gỡ sạch toàn bộ những gì script đã cài
 Use code with caution.
+
 Additional Flags / Tùy chọn bổ sung:
+
 • --strict: Also isolate cosmetic/legacy VNI/TCVN fonts (Cách ly cả các font trang trí hoặc font mã cũ VNI/TCVN).
+
 • --cli: Run in terminal mode without GUI popups (Chạy thuần dòng lệnh, tắt hộp thoại đồ họa).
+
 • -y, --yes: Auto-confirm all prompts (Tự động đồng ý mọi xác nhận).
+
 • --dry-run: Simulate execution without modifying files (Chạy thử nghiệm, không ghi/xóa file).
 
 🛠️ Requirements / Yêu cầu hệ thống
 
 • Core / Bắt buộc: bash, fontconfig (fc-scan, fc-match, fc-list, fc-cache)
+
 • Optional (Recommended) / Khuyên dùng: python3 (deep SFNT metadata audit / kiểm tra sâu cấu trúc font), zenity (GUI dialogs / giao diện đồ họa), unzip / p7zip / unrar (archive extraction / giải nén).
+
+Download herr https://github.com/dinoking-iot/Universal-Linux-Font-Installer-/releases/tag/installfontsuniversal
