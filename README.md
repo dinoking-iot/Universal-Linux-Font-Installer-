@@ -58,21 +58,28 @@ EN: Browsers remove execute permissions from downloaded scripts. Open a terminal
 VI: Trình duyệt mặc định tắt quyền thực thi của file tải về. Hãy mở Terminal tại thư mục chứa file và chạy một lần duy nhất:
 
 bash
+
 bash install_fonts_universal.sh
-Use code with caution.
+
 (The script marks itself executable automatically so double-clicking works from the next run / Script sẽ tự cấp quyền thực thi để các lần sau bạn chỉ cần click đúp).
 
 2. Commands & Options / Các lệnh và tùy chọn
 
 bash
+
 ./install_fonts_universal.sh                    # Open GUI picker / Mở giao diện chọn file hoặc thư mục
+
 ./install_fonts_universal.sh /path/to/fonts.zip # Direct install / Cài trực tiếp từ file nén hoặc thư mục
+
 ./install_fonts_universal.sh --diagnose         # Check system fonts / Kiểm tra tình trạng font (chỉ đọc)
+
 ./install_fonts_universal.sh --diagnose --fix   # Fix font hijacking / Chẩn đoán và tự động cách ly font lỗi
+
 ./install_fonts_universal.sh --fix-brave-prefs  # Reset Brave fonts / Đặt lại font tùy chỉnh trên Brave
+
 ./install_fonts_universal.sh --clean            # Clean temp & backups / Dọn dẹp file tạm và bản sao lưu cũ
+
 ./install_fonts_universal.sh --uninstall        # Uninstall everything / Gỡ sạch toàn bộ những gì script đã cài
-Use code with caution.
 
 Additional Flags / Tùy chọn bổ sung:
 
