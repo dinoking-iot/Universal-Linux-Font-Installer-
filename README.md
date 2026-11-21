@@ -57,15 +57,15 @@ EN: Browsers remove execute permissions from downloaded scripts. Open a terminal
 
 VI: Trình duyệt mặc định tắt quyền thực thi của file tải về. Hãy mở Terminal tại thư mục chứa file và chạy một lần duy nhất:
 
-bash
+```bash
 
 bash install_fonts_universal.sh
-
+```
 (The script marks itself executable automatically so double-clicking works from the next run / Script sẽ tự cấp quyền thực thi để các lần sau bạn chỉ cần click đúp).
 
 2. Commands & Options / Các lệnh và tùy chọn
 
-bash
+```bash
 
 ./install_fonts_universal.sh                    # Open GUI picker / Mở giao diện chọn file hoặc thư mục
 
@@ -80,7 +80,7 @@ bash
 ./install_fonts_universal.sh --clean            # Clean temp & backups / Dọn dẹp file tạm và bản sao lưu cũ
 
 ./install_fonts_universal.sh --uninstall        # Uninstall everything / Gỡ sạch toàn bộ những gì script đã cài
-
+```
 Additional Flags / Tùy chọn bổ sung:
 
 • --strict: Also isolate cosmetic/legacy VNI/TCVN fonts (Cách ly cả các font trang trí hoặc font mã cũ VNI/TCVN).
